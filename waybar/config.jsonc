@@ -7,15 +7,15 @@
   "gtk-layer-shell": true,
   "passthrough": false,
   "fixed-center": true,
-  "modules-left": ["hyprland/workspaces", "hyprland/window"],
-  "modules-center": ["mpris"],
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["mpris", "clock#simpleclock"],
   "modules-right": [
     "cpu",
     "memory",
     "pulseaudio",
     "clock",
-    "clock#simpleclock",
     "tray",
+    "custom/winstart",
     "custom/power",
   ],
   "custom/spotify": {
@@ -27,7 +27,7 @@
     "exec": "spotifatius monitor",
   },
   "mpris": {
-    "player": "spotify",
+    "player": "yandex-music",
     "dynamic-order": ["artist", "title"],
     "format": "{player_icon} {dynamic}",
     "format-paused": "{status_icon} <i>{dynamic}</i>",
@@ -40,10 +40,18 @@
   },
   "hyprland/workspaces": {
     "on-click": "activate",
-    "format": "{id}",
+    "format": "{icon}",
     "all-outputs": true,
     "disable-scroll": false,
     "active-only": false,
+    "format-icons": {
+      "1": "\udb80\ude39",
+      "2": "\udb80\ude39",
+      "3": "\uf2c6",
+      "4": "\uf120",
+      "5": "\udb82\uded4",
+      "6": "\ue634"
+    }
   },
   "hyprland/window": {
     "format": "{class}",
@@ -54,7 +62,7 @@
   },
   "clock#simpleclock": {
     "tooltip": false,
-    "format": "  {:%H:%M}",
+    "format": "  {:%OI:%M %p}",
   },
   "clock": {
     "format": "  {:L%a %d %b}",
@@ -86,9 +94,14 @@
     "format": "|",
     "tooltip": false,
   },
+  "custom/winstart": {
+    "tooltip": false,
+    "on-click": "startwin",
+    "format": "&#xf17a;"    
+  },
   "custom/power": {
     "tooltip": false,
-    "on-click": "wlogout -p layer-shell &",
+    "on-click": "poweroff",
     "format": "",
   },
 }

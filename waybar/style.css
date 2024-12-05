@@ -1,8 +1,8 @@
 * {
   min-height: 0;
   min-width: 0;
-  font-family: Lexend, "Font Awesome 6 Free Solid";
-  font-size: 16px;
+  font-family: sans-serif;
+  font-size: 20px;
   font-weight: 600;
 }
 
@@ -48,6 +48,7 @@ window#waybar {
 #custom-logo,
 #custom-power,
 #custom-spotify,
+#custom-winstart,
 #cpu,
 #tray,
 #memory,
@@ -73,6 +74,10 @@ window#waybar {
 #custom-sep {
   padding: 0px;
   color: #585b70;
+}
+
+#tray {
+  font-size: 20px;
 }
 
 #custom-spotify.playing {
@@ -132,7 +137,12 @@ window#waybar.empty #window {
 
 #custom-power {
   color: #f38ba8;
-  font-size: 14px;
+  font-size: 20px;
+}
+
+#custom-winstart {
+  color: #f38ba8;
+  font-size: 20px;
 }
 
 tooltip {
